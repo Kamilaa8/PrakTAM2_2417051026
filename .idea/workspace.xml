@@ -9,16 +9,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25ea58ba-1026-4ea2-b611-7481fecb0ee0" name="Changes" comment="Tugas LKP 8">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/CalendarScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/DetailScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/MainPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/ProfileScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/SelfCareScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/StartScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/TrackerScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="25ea58ba-1026-4ea2-b611-7481fecb0ee0" name="Changes" comment="apdet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/CalendarScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/CalendarScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/DetailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/DetailScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/MainPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/MainPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/TrackerScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/TrackerScreen.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777989221730</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="apdet">
+      <option name="closed" value="true" />
+      <created>1781204714091</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1781204714091</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,7 +328,8 @@
     <MESSAGE value="Tugas LKP 6" />
     <MESSAGE value="Tugas LKP 7" />
     <MESSAGE value="Tugas LKP 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tugas LKP 8" />
+    <MESSAGE value="apdet" />
+    <option name="LAST_COMMIT_MESSAGE" value="apdet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

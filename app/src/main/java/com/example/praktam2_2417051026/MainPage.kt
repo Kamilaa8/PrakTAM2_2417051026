@@ -6,7 +6,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.praktam2_2417051026.Model.Tracker
+import com.example.praktam2_2417051026.data.model.Tracker
 
 @Composable
 fun MainPage() {

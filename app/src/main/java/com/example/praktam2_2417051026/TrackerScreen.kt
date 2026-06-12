@@ -3,9 +3,9 @@ package com.example.praktam2_2417051026
 import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -19,8 +19,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.praktam2_2417051026.Model.Tracker
-import com.example.praktam2_2417051026.network.RetrofitClient
+import com.example.praktam2_2417051026.data.api.RetrofitClient
+import com.example.praktam2_2417051026.data.model.Tracker
+import com.example.praktam2_2417051026.data.repository.TrackerRepository
 import com.example.praktam2_2417051026.ui.theme.PinkPrimary
 import com.example.praktam2_2417051026.ui.theme.PinkSecondary
 import com.example.praktam2_2417051026.ui.theme.PinkBackground
@@ -44,10 +45,12 @@ fun TrackerScreen(
     var errorMessage by remember { mutableStateOf("") }
     val context = LocalContext.current
 
+    val trackerRepository = remember { TrackerRepository(RetrofitClient.instance) }
+
     LaunchedEffect(Unit) {
         try {
-            Log.d("TrackerScreen", "Fetching trackers...")
-            val response = RetrofitClient.instance.getTrackers()
+            Log.d("TrackerScreen", "Fetching trackers via Repository...")
+            val response = trackerRepository.getTrackers()
             Log.d("TrackerScreen", "Successfully fetched ${response.size} trackers")
             onTrackersLoaded(response)
             isLoadingApi = false
@@ -74,66 +77,82 @@ fun TrackerScreen(
             }
         )
     } else if (showTracker && selectedTracker == null) {
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .background(PinkBackground)
-                .padding(16.dp)
-                .verticalScroll(rememberScrollState())
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Spacer(modifier = Modifier.height(40.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(
-                    text = "Skala Kram",
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold,
-                    color = PinkPrimary
-                )
-                TextButton(onClick = {
-                    showTracker = false
-                    showCalendar = true
-                }) {
-                    Text("Batal", color = PinkPrimary, fontWeight = FontWeight.Bold)
+            item {
+                Spacer(modifier = Modifier.height(40.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        text = "Skala Kram",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = PinkPrimary
+                    )
+                    TextButton(onClick = {
+                        showTracker = false
+                        showCalendar = true
+                    }) {
+                        Text("Batal", color = PinkPrimary, fontWeight = FontWeight.Bold)
+                    }
                 }
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Pilih skala yang paling menggambarkan rasa nyeri kamu saat ini.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                )
             }
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = "Pilih skala yang paling menggambarkan rasa nyeri kamu saat ini.",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
-            )
-            Spacer(modifier = Modifier.height(20.dp))
 
             if (isLoadingApi) {
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    CircularProgressIndicator(color = PinkPrimary)
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        CircularProgressIndicator(color = PinkPrimary)
+                    }
                 }
             } else if (isError) {
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(text = "Gagal memuat data: $errorMessage", color = PinkPrimary)
-                        Spacer(modifier = Modifier.height(8.dp))
-                        Button(
-                            onClick = {
-                                isLoadingApi = true
-                                isError = false
-                            },
-                            colors = ButtonDefaults.buttonColors(containerColor = PinkPrimary)
-                        ) {
-                            Text("Coba Lagi")
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Text(text = "Gagal memuat data: $errorMessage", color = PinkPrimary)
+                            Spacer(modifier = Modifier.height(8.dp))
+                            Button(
+                                onClick = {
+                                    isLoadingApi = true
+                                    isError = false
+                                    isLoadingApi = true
+                                    try {
+                                    } catch (e: Exception) {}
+                                },
+                                colors = ButtonDefaults.buttonColors(containerColor = PinkPrimary)
+                            ) {
+                                  Text("Coba Lagi")
+                            }
                         }
                     }
                 }
             } else {
-                trackers.forEach { tracker ->
+                items(trackers) { tracker ->
                     Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(bottom = 16.dp),
+                        modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(20.dp),
                         colors = CardDefaults.cardColors(containerColor = Color.White),
                         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)

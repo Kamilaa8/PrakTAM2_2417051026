@@ -10,7 +10,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import androidx.compose.ui.platform.LocalContext
-import com.example.praktam2_2417051026.Model.Tracker
+import com.example.praktam2_2417051026.data.model.Tracker
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

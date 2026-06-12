@@ -18,7 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.praktam2_2417051026.Model.Tracker
+import com.example.praktam2_2417051026.data.model.Tracker
 import com.example.praktam2_2417051026.ui.theme.PinkPrimary
 import com.example.praktam2_2417051026.ui.theme.PinkSecondary
 
