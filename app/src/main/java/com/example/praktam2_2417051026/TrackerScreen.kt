@@ -158,10 +158,6 @@ fun TrackerScreen(
                         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
-                            val imageResId = remember(tracker.imageName) {
-                                val resId = context.resources.getIdentifier(tracker.imageName, "drawable", context.packageName)
-                                if (resId != 0) resId else R.drawable.emoji2
-                            }
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Box(
                                     modifier = Modifier
@@ -171,7 +167,7 @@ fun TrackerScreen(
                                     contentAlignment = Alignment.Center
                                 ) {
                                     AsyncImage(
-                                        model = imageResId,
+                                        model = tracker.imageUrl,
                                         contentDescription = "Skala ${tracker.skala}",
                                         placeholder = painterResource(id = R.drawable.menstrual),
                                         error = painterResource(id = R.drawable.emoji2),

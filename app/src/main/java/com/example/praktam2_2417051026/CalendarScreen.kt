@@ -1,6 +1,7 @@
 package com.example.praktam2_2417051026
 
 import androidx.compose.foundation.Image
+import coil.compose.AsyncImage
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -157,15 +158,12 @@ fun CalendarScreen(
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            val context = LocalContext.current
-                            val imageResId = remember(tracker.imageName) {
-                                val resId = context.resources.getIdentifier(tracker.imageName, "drawable", context.packageName)
-                                if (resId != 0) resId else R.drawable.emoji2
-                            }
-                            Image(
-                                painter = painterResource(id = imageResId),
+                            AsyncImage(
+                                model = tracker.imageUrl,
                                 contentDescription = "Skala ${tracker.skala}",
-                                modifier = Modifier.size(60.dp)
+                                modifier = Modifier.size(60.dp),
+                                placeholder = painterResource(id = R.drawable.menstrual),
+                                error = painterResource(id = R.drawable.emoji2)
                             )
                             Spacer(modifier = Modifier.width(16.dp))
                             Column {

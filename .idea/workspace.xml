@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25ea58ba-1026-4ea2-b611-7481fecb0ee0" name="Changes" comment="apdet">
+    <list default="true" id="25ea58ba-1026-4ea2-b611-7481fecb0ee0" name="Changes" comment="TUGAS LKP-9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/CalendarScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/CalendarScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/DetailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/DetailScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/MainPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/MainPage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/TrackerScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/praktam2_2417051026/TrackerScreen.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -306,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781204714091</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="TUGAS LKP-9">
+      <option name="closed" value="true" />
+      <created>1781231689274</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1781231689274</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,7 +336,8 @@
     <MESSAGE value="Tugas LKP 7" />
     <MESSAGE value="Tugas LKP 8" />
     <MESSAGE value="apdet" />
-    <option name="LAST_COMMIT_MESSAGE" value="apdet" />
+    <MESSAGE value="TUGAS LKP-9" />
+    <option name="LAST_COMMIT_MESSAGE" value="TUGAS LKP-9" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -347,12 +355,12 @@
       <map>
         <entry key="com.example.praktam2_2417051026">
           <value>
-            <CheckInfo lastCheckTimestamp="1780208448954" />
+            <CheckInfo lastCheckTimestamp="1781232645998" />
           </value>
         </entry>
         <entry key="com.example.praktam2_2417051026.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1780208448954" />
+            <CheckInfo lastCheckTimestamp="1781232645998" />
           </value>
         </entry>
       </map>

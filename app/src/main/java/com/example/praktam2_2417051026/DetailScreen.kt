@@ -23,18 +23,12 @@ fun DetailScreen(
 ) {
     val scope = rememberCoroutineScope()
     var isLoading by remember { mutableStateOf(false) }
-    val context = LocalContext.current
-    val imageResId = remember(tracker.imageName) {
-        val resId = context.resources.getIdentifier(tracker.imageName, "drawable", context.packageName)
-        if (resId != 0) resId else R.drawable.emoji2
-    }
-
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         AsyncImage(
-            model = imageResId,
+            model = tracker.imageUrl,
             contentDescription = "Skala ${tracker.skala}",
             placeholder = painterResource(id = R.drawable.menstrual),
             error = painterResource(id = R.drawable.emoji2),
